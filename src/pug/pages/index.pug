@@ -1,0 +1,666 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'home'
+    var id_page = 'id-page-home'
+    var headerCustomClass = 'type1'
+    var class_page = 'class-page-home'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var spaCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' },
+    {num: 5, text: 'ЯПОНСЬКІ БАНІ "ОФУРО"' },{num: 6, text: 'БАНЯ МАГІЧНІ КУЛІ' },
+    {num: 7, text: 'МЕДИТАЦІЙНА БАНЯ' },{num: 8, text: 'ТУРЕЦЬКИЙ ХАМАМ' },
+    {num: 9, text: 'РИМСЬКА БАНЯ' },{num: 10, text: 'ПРОЦЕДУРНІ КІМНАТИ' },
+    {num: 11, text: 'ФІТО КІМНАТА' },{num: 12, text: "М'ЯКА КІМНАТА" },
+    {num: 13, text: 'МАСАЖНІ КІМНАТИ' }]
+
+    var rooftopCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' }]
+
+    var skiFunCards = [{num: 1, text: 'DIRECT SKI IN/SKI OUT' },{num: 2, text: 'АПРЕ-СКІ ТЕРАСА' },
+    {num: 3, text: 'ТРЕВЕЛАТОР' },{num: 4, text: 'НАВЧАЛЬНА ГІРКА' },{num: 5, text: 'ЛИЖНА ІНФРАСТРУКТУРА' }]
+
+      var foodCards = [{num: 1, text: 'ПАНОРАМНИЙ РЕСТОРАН' },{num: 2, text: 'АЗІЙСЬКИЙ РЕСТОРАН' },
+    {num: 3, text: 'ЛОБІ БАР' },{num: 4, text: 'ЛІНІЯ СНІДАНКІВ' }]
+
+    var businessCards = [{num: 1, text: 'КОНФЕРЕНЦ-ЗАЛИ' },{num: 2, text: 'БАНКЕТНІ ЗАЛИ' },
+    {num: 3, text: 'КОВОРКІНГ ЛАУНДЖ' }]
+
+    var hotelCards = [{num: 1, text: 'САЛОН КРАСИ' },{num: 2, text: 'ТОРГІВЕЛЬНА ЗОНА' },
+    {num: 3, text: 'ДИТЯЧА КІМНАТА' },{num: 4, text: 'ЦІЛОДОБОВА РЕЦЕПЦІЯ' },
+    {num: 5, text: 'КОНСЬЄРЖ СЕРВІС' },{num: 6, text: 'ВЕЛОПАРКОВКА ПІД ОХОРОНОЮ' },
+    {num: 7, text: 'КРИТИЙ ПАРКІНГ' },{num: 8, text: 'ТРАНСФЕРИ ТА ТАКСІ' },]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.hero-section
+    .container.hero__bg
+      div.section-title.spa-title 
+        span.section-title__first-row 
+          span.overflow-hidden
+            h1 Mountain Residence
+          span.overflow-hidden.hero__social-list
+            ul
+              li 
+                a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow")
+                  <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24.75" cy="24" r="23.5" stroke="white"/>
+                    <path d="M27.6069 17.9887H29.25V15.1268C28.9665 15.0878 27.9916 15 26.8562 15C24.4871 15 22.8643 16.4902 22.8643 19.2292V21.75H20.25V24.9495H22.8643V33H26.0695V24.9503H28.5781L28.9763 21.7508H26.0688V19.5465C26.0695 18.6218 26.3185 17.9887 27.6069 17.9887Z" fill="white"/>
+                  </svg>
+              li 
+                a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow")
+                  <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24.75" cy="24" r="23.5" stroke="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4768 15.7967C22.3281 15.7593 22.6028 15.75 24.7531 15.75C26.9028 15.75 27.1784 15.7593 28.0331 15.7999C28.9063 15.8384 29.5175 15.9807 30.0582 16.1895C30.6285 16.4044 31.1479 16.7428 31.5771 17.1779L31.5747 17.1756L31.3378 17.4181L31.5794 17.1802L31.5771 17.1779C32.0165 17.6079 32.3517 18.1245 32.5695 18.6999C32.7787 19.2384 32.921 19.8529 32.9595 20.7258C32.9969 21.578 33 21.8538 33 24.0016C33 26.1515 32.9907 26.4261 32.9533 27.2773C32.9148 28.1514 32.7721 28.763 32.563 29.304C32.1174 30.4562 31.2062 31.3673 30.0538 31.8129C29.515 32.0224 28.9001 32.1648 28.0264 32.2033C27.175 32.2408 26.9003 32.25 24.7501 32.25C22.5998 32.25 22.325 32.2408 21.4737 32.2033C20.6001 32.1648 19.9889 32.0225 19.448 31.8136C18.8775 31.5987 18.3579 31.2601 17.9286 30.8248L17.9305 30.8266L18.1684 30.585L17.9268 30.8229L17.9286 30.8248C17.4935 30.3959 17.155 29.8797 16.9368 29.3032C16.7276 28.7648 16.5852 28.1503 16.5467 27.2773C16.5093 26.4262 16.5 26.1515 16.5 24.0016C16.5 21.8522 16.5093 21.5767 16.5499 20.7221C16.5884 19.8491 16.7307 19.2381 16.9396 18.6974C17.1546 18.1273 17.4929 17.6079 17.9281 17.1788L17.9259 17.1812L18.1684 17.4181L17.9305 17.1765L17.9281 17.1788C18.3582 16.7394 18.875 16.4043 19.4506 16.1866C19.989 15.9775 20.6037 15.8352 21.4768 15.7967ZM24.7501 20.0921C22.5926 20.0921 20.8422 21.8424 20.8422 24C20.8422 26.1575 22.5926 27.9079 24.7501 27.9079C26.9076 27.9079 28.658 26.1575 28.658 24C28.658 21.8424 26.9076 20.0921 24.7501 20.0921ZM29.5263 17.4868C28.5672 17.4868 27.7896 18.2643 27.7896 19.2237C27.7896 20.1829 28.5672 20.9605 29.5263 20.9605C30.4856 20.9605 31.2632 20.1829 31.2632 19.2237C31.2632 18.2643 30.4855 17.4868 29.5263 17.4868Z" fill="white"/>
+                  </svg>
+              li 
+                a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") 
+                  <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24.75" cy="24" r="23.5" stroke="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33.6167 20.4281L33.6175 20.4363C33.6228 20.4961 33.7499 21.9171 33.75 23.3439V24.6776C33.75 26.1044 33.6228 27.5254 33.6175 27.5852L33.6154 27.6035C33.5978 27.7437 33.4252 28.9924 32.8285 29.6347C32.1126 30.4147 31.305 30.4996 30.9168 30.5404L30.9165 30.5404C30.8794 30.5443 30.8456 30.5478 30.8156 30.5517L30.7841 30.555C28.4045 30.7263 24.8109 30.7497 24.7749 30.7499L24.7694 30.75L24.7639 30.7499C24.5813 30.7473 20.2734 30.6835 18.8995 30.554L18.8579 30.5483C18.816 30.541 18.7551 30.5342 18.6844 30.5261L18.6787 30.5255C18.2156 30.473 17.3547 30.3754 16.6738 29.6375C16.0502 28.9882 15.8986 27.7355 15.8833 27.5943L15.8824 27.5854C15.877 27.5255 15.75 26.1044 15.75 24.6776V23.3439C15.75 21.9171 15.877 20.4959 15.8824 20.4363L15.8844 20.418C15.9022 20.2777 16.0746 19.0289 16.6713 18.3868C17.3975 17.5958 18.2097 17.5029 18.6 17.4583C18.6054 17.4577 18.6108 17.4571 18.6162 17.4565C18.6406 17.4537 18.6633 17.4511 18.6843 17.4483L18.716 17.445C21.1171 17.2737 24.7108 17.2503 24.7468 17.2501L24.7499 17.25L24.7531 17.2501C24.7891 17.2503 28.3828 17.2737 30.7624 17.445L30.7939 17.4483C30.8207 17.4518 30.8506 17.4552 30.8833 17.4589C31.2781 17.5033 32.099 17.5961 32.8232 18.3595C33.4497 19.0086 33.6014 20.2846 33.6167 20.4281ZM23.4343 21.3078L27.6227 23.4015C27.8706 23.5254 28.0239 23.7626 28.0229 24.0207C28.0218 24.2788 27.8666 24.5149 27.6179 24.6371L23.4294 26.6947C23.3144 26.7513 23.1894 26.7794 23.0647 26.7794C22.9286 26.7794 22.7928 26.7459 22.6703 26.679C22.4357 26.5509 22.2957 26.3254 22.2957 26.0758V21.9244C22.2957 21.6736 22.4365 21.4476 22.6727 21.3197C22.9088 21.1919 23.1935 21.1874 23.4343 21.3078Z" fill="white"/>
+                  </svg>
+              li 
+                a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow" class="svg-link__cartel") 
+                  img(src="../assets/images/cartel.png" alt="cartel logo")
+        span.section-main-text Продаж елітних апартаментів в серці Буковелю
+        span.section-title__first-row.second-row
+          span.overflow-hidden.hero__text-block 
+            p Продаж апартаментів в самому центрі Буковелю! Інвестиція, приречена на успіх!
+            a.hero-youtube-link(target="_blank" href="​https://www.youtube.com/watch?v=i94hxFYST18")
+              span Відеопрезентація
+              <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.4887 4.4359L24.4898 4.44632C24.497 4.52278 24.6663 6.33855 24.6665 8.16162V9.86583C24.6665 11.6889 24.497 13.5047 24.4898 13.5811L24.4871 13.6044C24.4636 13.7836 24.2335 15.3792 23.4379 16.1998C22.4833 17.1966 21.4066 17.305 20.8889 17.3572L20.8885 17.3572C20.8391 17.3621 20.794 17.3666 20.7539 17.3717L20.712 17.3758C17.5392 17.5948 12.7477 17.6246 12.6997 17.6248L12.6924 17.625L12.6851 17.6248C12.4416 17.6215 6.69777 17.54 4.86581 17.3746L4.81033 17.3673C4.75453 17.358 4.67339 17.3492 4.57908 17.339L4.57138 17.3381C3.95395 17.2711 2.80608 17.1463 1.89824 16.2035C1.06677 15.3738 0.864623 13.7731 0.844298 13.5928L0.843016 13.5813C0.835875 13.5048 0.666504 11.6889 0.666504 9.86583V8.16162C0.666504 6.33855 0.835875 4.5226 0.843016 4.44632L0.845763 4.42304C0.869383 4.24372 1.09936 2.6481 1.89495 1.82762C2.8632 0.816867 3.94608 0.69819 4.46646 0.641197C4.47376 0.640389 4.48096 0.639598 4.48805 0.638819C4.52061 0.635239 4.55092 0.631906 4.57889 0.628339L4.62119 0.624169C7.82258 0.405234 12.6142 0.375348 12.6622 0.375174L12.6664 0.375L12.6706 0.375174C12.7186 0.375348 17.5102 0.405234 20.6831 0.624169L20.725 0.628339C20.7607 0.632857 20.8006 0.637201 20.8442 0.641892C21.3706 0.698711 22.4652 0.817214 23.4307 1.79269C24.2661 2.62204 24.4684 4.25258 24.4887 4.4359ZM10.9126 5.55996L16.4972 8.23519C16.8277 8.39357 17.0322 8.69665 17.0308 9.02641C17.0293 9.35617 16.8223 9.6579 16.4908 9.81409L10.9061 12.4432C10.7528 12.5155 10.5861 12.5515 10.4199 12.5515C10.2384 12.5515 10.0573 12.5086 9.89396 12.4231C9.58115 12.2595 9.39446 11.9713 9.39446 11.6523V6.3478C9.39446 6.02733 9.5823 5.7386 9.89724 5.57515C10.212 5.41188 10.5915 5.40614 10.9126 5.55996Z" fill="white"/>
+              </svg>
+
+
+      .hero__invest-more-wrap 
+        .arrow-down__button-wrap
+          buttom.arrow-down__button 
+            <svg class="arrow-down__svg " viewBox="0 0 179 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
+            </svg>
+          p Дізнатися більше
+
+  //- section.content.content--spacing
+  //-   .grid.grid--3
+  //-     .grid-wrap
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/18.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/29.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/6.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/37.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/15.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/32.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/41.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/23.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/5.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/12.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/27.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/1.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/46.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/35.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/20.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/39.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/8.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/25.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/2.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/44.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/43.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/17.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/26.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/11.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/14.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/7.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/33.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/30.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/10.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/21.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/16.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/31.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/24.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/36.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/42.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/3.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/38.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/9.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/4.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/40.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/28.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/22.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/34.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/13.jpg)')
+  //-       .grid__item
+  //-         .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/19.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/47.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/45.jpg)')
+  //-       //- .grid__item
+  //-       //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/48.jpg)')
+  //-   .content__title.content__title--left.content__title--bottom
+  //-     | Інфраструктура, 
+  //-     span яка  
+  //-       span(class="title-accent") не лишить
+  //-         br 
+  //-         |   вас осторонь!
+  section
+    .section.chalet.luxary-section
+      .container.height
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Luxury
+          h2.section-title__second-row(style="margin-top:0") Apartments
+          span.section-title__first-row.bottom-row
+            span.section-title__number 01
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+            ul.luxary__info-list 
+              li.luxary__info-item 
+                h3 Кількість
+                p 245
+              li.luxary__info-item 
+                h3 Дохідність
+                p 12% 
+                  span річних
+              li.luxary__info-item 
+                h3 Площа від
+                p 32 м² 
+              //- li.luxary__info-item 
+              //-   h3 Дохідність
+              //-   p 12% 
+              //-     span річних
+    .container.cards__container.apartment-cards
+      each card in rooftopCards 
+        a(href="/").card--without-bulge
+          +svg("card-logo").card__logo
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img.no-paralax
+          .text
+            .text__content
+              h3.card__title 65.01 м²
+              .card__info
+                .card__info-row 
+                  p.card__info-name Статус:
+                  p.card__info-value.status Вільно
+                .card__info-row 
+                  p.card__info-name Номер:
+                  p.card__info-value 623
+              p.card__link Дізнатися більше
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
+                  <path d="M-2.50865e-07 7.26087L17 7.26087M17 7.26087L17 6.21739L10.625 1M17 7.26087L17 8.30435L10.625 13" stroke="#111111" stroke-width="1.16667"/>
+                </svg>
+
+    .swiper-apartments.container.apartment-cards
+      .swiper-apartments-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-apartments-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in rooftopCards 
+          .swiper-slide
+            a(href="/").card--without-bulge
+              +svg("card-logo").card__logo
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
+              .text
+                .text__content
+                  h3.card__title 65.01 м²
+                  .card__info
+                    .card__info-row 
+                      p.card__info-name Статус:
+                      .card__info-value Вільно
+                    .card__info-row 
+                      p.card__info-name Номер:
+                      .card__info-value 623
+                  p.card__link Дізнатися більше
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
+                      <path d="M-2.50865e-07 7.26087L17 7.26087M17 7.26087L17 6.21739L10.625 1M17 7.26087L17 8.30435L10.625 13" stroke="#111111" stroke-width="1.16667"/>
+                    </svg>
+
+  section.spa-section
+    .spa.section
+      //- .section-bg__mask
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section1bg.jpg" alt="фото" img-paralax)
+      .section-bg__mask
+
+      div.section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 WELNESS 
+          span.section-title__accent & 
+        h2.section-title__second-row SPA  
+        span.section-title__first-row.bottom-row
+          span.section-title__number 01
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
+  section.bulge 
+    .container.cards__container
+      each card in spaCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number #{card.num>9 ? card.num : "0"+card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+    .swiper-spa.container
+      .swiper-spa-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-spa-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in spaCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number #{card.num>9 ? card.num : "0"+card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
+  section
+    .section.rooftop
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section2bg.jpg" alt="фото" img-paralax)
+      .section-bg__mask
+
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Rooftop 
+          span.section-title__accent & 
+        h2.section-title__number(style="margin-top:0") Garden
+        h2.section-title__second-row Solarium  
+        span.section-title__first-row.bottom-row
+          span.section-title__number 02
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
+
+    .container.cards__container
+      each card in rooftopCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+
+    .swiper-rooftop.container
+      .swiper-rooftop-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-rooftop-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in rooftopCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
+  section
+    .section.ski-fun
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section3bg.jpg" alt="фото" img-paralax)
+      .section-bg__mask
+
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Ski 
+          span.section-title__accent & 
+        h2.section-title__second-row Fun
+
+        span.section-title__first-row.bottom-row
+          span.section-title__number 03
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in skiFunCards
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+    .swiper-ski.container
+      .swiper-ski-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-ski-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in skiFunCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
+  section
+    .section.food
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section4bg.jpg" alt="фото" img-paralax)
+      .section-bg__mask
+
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Food
+          span.section-title__accent & 
+        h2.section-title__second-row Drinks
+
+        span.section-title__first-row.bottom-row
+          span.section-title__number 04
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in foodCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+    .swiper-food.container
+      .swiper-food-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-food-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in foodCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
+  section
+    .section.business
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section5bg.jpg" alt="фото" img-paralax)
+      .section-bg__mask
+
+      .section-title.spa-title.container
+        span.section-title__first-row 
+          h2 Business
+          span.section-title__accent & 
+        h2.section-title__second-row Meetings
+
+        span.section-title__first-row.bottom-row
+          span.section-title__number 05
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in businessCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+    .swiper-business.container
+      .swiper-business-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-business-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in businessCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
+  section
+    .section.hotel
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section6bg.jpg" alt="фото" img-paralax)
+      .section-bg__mask
+
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Hotel
+          span.section-title__accent & 
+        h2.section-title__number(style="margin-top:0") Info
+        h2.section-title__second-row Services 
+        span.section-title__first-row.bottom-row
+          span.section-title__number 06
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in hotelCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+    .swiper-hotel.container
+      .swiper-hotel-button-prev
+        +svg("arrow-slider-cards")
+      .swiper-hotel-button-next
+        +svg("arrow-slider-cards")
+      .swiper-wrapper
+        each card in hotelCards
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
+  //- include ../includes/chalet-section.pug
+  section
+    .section.building
+      .container.building-padding
+        .svg-title__wrap
+          +svg("tree-title").svg-title__tree
+          h2.section-title.spa-title.building-title Будівництво
+          +svg("leave1").svg-title__leave1.svg-title__leave
+          +svg("leave2").svg-title__leave2.svg-title__leave
+          +svg("leave3").svg-title__leave3.svg-title__leave
+          +svg("leave4").svg-title__leave4.svg-title__leave
+          +svg("leave5").svg-title__leave5.svg-title__leave
+        .progress-preview
+          video.progress-preview__video
+            <source src="path" type="video/mp4">
+            | Відео не відтворюється на вашому браузері
+          .progress-preview__text-wrap
+            .progress-preview__date-wrap
+              p.progress-preview__month Липень
+              p.progress-preview__year 2023
+            .progress-preview__descr Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+
+            a(href="#" aria-label="move to building progress page").all-progress-link  
+              p Дивитися звіт
+              +svg("link-arrow").svg--link-arrow
+        a(href="#" aria-label="move to building progress page").all-progress-link.more 
+          p Більше звітів
+          +svg("link-arrow").svg--link-arrow
+  section
+    .section.news
+      .container 
+        .section-title.building-title
+          span.section-title__first-row 
+            h2 Новини
+            span.section-title__accent & 
+          span.section-title__first-row 
+            a.all-progress-link.all-news-link
+              p На сторінку
+              +svg("link-arrow").svg--link-arrow
+            span Акції
+        .news__container--last
+  section
+    .section.building.contacts
+      .container
+        h2.section-title.building-title Контакти
+        .contacts__content-map-wrap 
+          .contacts__content
+            .contacts__email
+              p.contacts__label Наша адреса:
+              a(href="mailto:reservations@mountain-residence.com").contacts__location Івано-Франківська область, с. Поляниця, урочище Вишні, 421
+              a(href="#").all-progress-link.direction-link
+                p Прокласти маршрут через Apple Maps
+                +svg("link-arrow").svg--link-arrow
+              .contacts__schedule
+                p.contacts__label Графік роботи:
+                p.contacts__schedule-info Пн-Нд 9:00-18:00
+
+            .contacts__phone
+              p.contacts__label Відділ інвестицій:
+              a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
+            .contacts__phone
+              p.contacts__label Відділ бронювання:
+              a(href="tel:+38 034 259 50 00").contacts__phone--booking +38 034 259 50 00
+            .contacts__email
+              p.contacts__label Наша адреса:
+              a(href="mailto:reservations@mountain-residence.com").contacts__location Івано-Франківська область, с. Поляниця, урочище Вишні, 421
+              a(href="#").all-progress-link.direction-link
+                p Прокласти маршрут через Apple Maps
+                +svg("link-arrow").svg--link-arrow
+              .contacts__schedule
+                p.contacts__label Графік роботи:
+                p.contacts__schedule-info Пн-Нд 9:00-18:00
+            .contacts__email
+              p.contacts__label E-mail:
+              a(href="mailto:reservations@mountain-residence.com").contacts__email-link reservations@mountain-residence.com
+            .contacts__email
+              p.contacts__label E-mail:
+              ul.contacts__social-list
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") instagram
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") facebook
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") youtube
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") cartel restaurants
+          .contacts__map(id="map")
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42414.982348961654!2d24.352758635553503!3d48.36174580883851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473719c19227218b%3A0x86600928eb33c293!2sMountain%20Residence!5e0!3m2!1suk!2sua!4v1695914623172!5m2!1suk!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

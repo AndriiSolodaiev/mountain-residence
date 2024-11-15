@@ -1,0 +1,156 @@
+.progress {
+  .page-title {
+    margin-bottom: 42px;
+
+    @include tablet {
+      margin-bottom: 62px;
+    }
+
+    @include laptop {
+      margin-bottom: 74px;
+    }
+
+    @include desktop {
+      margin-bottom: 115px;
+    }
+  }
+}
+
+.progress__filter-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+
+  @include laptop {
+    margin-bottom: 60px;
+    gap: 20px;
+  }
+
+  @include desktop {
+    margin-bottom: 100px;
+  }
+
+}
+
+.progress {
+  .fiter__all {
+    width: 15%;
+
+    @include tablet {
+      width: 207px;
+    }
+
+
+  }
+}
+
+.filter__button {
+  position: relative;
+  padding: 10px 10px;
+  text-align: center;
+  border-top: 2px solid $color-black;
+  border-bottom: 2px solid $color-black;
+  @include text-style-news-descr;
+  color: $color-black;
+  width: 120px;
+
+  @include tablet {
+    width: 207px;
+  }
+
+  @include laptop {
+    padding: 20px 0px;
+    border-top: 3px solid $color-black;
+    border-bottom: 3px solid $color-black;
+  }
+
+}
+
+.fiter__year {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.fiter__month {
+  @extend .fiter__year;
+}
+
+.progress__container {
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 60px;
+  gap: 40px;
+
+  @include tablet {
+
+    padding-bottom: 100px;
+    gap: 60px;
+  }
+
+  @include laptop {
+
+    gap: 20px;
+  }
+
+  @include desktop {
+
+    padding-bottom: 150px;
+    gap: 60px;
+  }
+}
+
+.active.filter__button {
+  border-color: $color-yellow;
+
+}
+
+.filter__popup {
+  position: absolute;
+  z-index: 5;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+
+  .filter__value {
+    padding: 8px 15px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.progress__no-result {
+  @include text-style-general-style;
+  color: $color-black;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+
+}

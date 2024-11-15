@@ -1,0 +1,801 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+.header-bg {
+  display: flex;
+
+  align-items: center;
+  background: rgba(17, 17, 17, 0);
+  width: 100%;
+  height: 80px;
+  transition: all 0.3s ease-in-out;
+  background-size: cover;
+
+  &.menuOpen {
+    @media screen and (max-width: 1365px) {
+      background: linear-gradient(180deg, #fff 80%, #ffffff00);
+    }
+  }
+
+  &.scroll-down {
+    background: rgba(17, 17, 17, 0.5);
+    height: 60px;
+    transition: all 0.3s ease-in-out;
+
+    @include tablet {
+      height: 80px;
+    }
+
+    @include laptop {
+      height: 60px;
+    }
+
+    @include desktop {
+      height: 100px;
+    }
+  }
+
+  @include tablet {
+    height: 100px;
+  }
+
+  @include laptop {
+    height: 100px;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    height: 150px;
+  }
+}
+
+.scroll-down {
+  background: rgba(17, 17, 17, 0.5);
+  height: 60px;
+  transition: all 0.3s ease-in-out;
+
+  @include tablet {
+    height: 80px;
+  }
+
+  @include laptop {
+    height: 60px;
+  }
+
+  @include desktop {
+    height: 100px;
+  }
+}
+
+.blocks-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+
+  &~& {
+    margin-left: 12px;
+  }
+
+  @include tablet {
+    gap: 32px;
+
+    &~& {
+      margin-left: 32px;
+    }
+  }
+
+  @include laptop {
+    margin-left: 0;
+    gap: 60px;
+
+    &~& {
+      margin-left: 0;
+    }
+  }
+
+  @include desktop {
+    gap: 60px;
+  }
+}
+
+.logo {
+  width: 38px;
+  height: 33.895px;
+
+  & path {
+    fill: $color-yellow;
+  }
+
+  @include tablet {
+    width: 58px;
+    height: 51.735px;
+  }
+
+  @include laptop {
+    width: 41px;
+    height: 37px;
+  }
+
+  @include desktop {
+    width: 75.392px;
+    height: 67.259px;
+  }
+}
+
+.mode--mobile {
+  @include laptop {
+    display: none;
+  }
+}
+
+.contacts__phone--header {
+  @extend .contacts__phone;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__call-btn-wrap {
+  display: none;
+
+  @include laptop {
+    display: flex;
+    gap: 20px;
+  }
+
+  .contacts__phone--booking,
+  .contacts__phone--invest {
+    @include text-style-general-style;
+    color: $color-white;
+  }
+}
+
+.call-us__modal-container {
+
+  .contacts__phone--booking,
+  .contacts__phone--invest {
+    @include text-style-general-style;
+    color: $color-white;
+  }
+}
+
+.contacts__label--header {
+  @extend .contacts__label;
+  color: $color-yellow;
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) and (max-width: 1365px) {
+    font-size: 14px;
+  }
+
+  @include desktop {
+    font-size: 14px;
+  }
+}
+
+.header__call-btn {
+  border-radius: 50%;
+
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.header__apartments {
+    p {
+      display: none;
+    }
+  }
+
+  .svg--link-arrow {
+    display: none;
+  }
+
+  .svg--link-mobile {
+    width: 24px;
+    height: 24px;
+
+    path {
+      stroke: $color-white;
+    }
+  }
+
+  @include tablet {
+    width: 60px;
+    height: 60px;
+
+    .svg--link-mobile {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @include laptop {
+    &.header__apartments {
+      p {
+        display: block;
+      }
+    }
+
+    .header__apartments-main-btn,
+    .svg--link-mobile {
+      display: none;
+    }
+
+    .svg--link-arrow {
+      display: block;
+      width: 28px;
+      height: 38px;
+    }
+
+    @include text-style-uppercaesed-btn;
+    font-weight: 700;
+    border-radius: none;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    gap: 20px;
+  }
+}
+
+.header__apartments {
+  border-radius: 100px;
+  background-color: $color-yellow;
+  width: auto;
+  padding-right: 12px;
+
+  @include tablet {}
+
+  @include laptop {
+    p {
+      display: block;
+    }
+
+    .svg--link-mobile {
+      display: none;
+    }
+
+    .svg--link-arrow {
+      display: block;
+      width: 28px;
+      height: 38px;
+    }
+
+    @include text-style-uppercaesed-btn;
+    font-weight: 700;
+    border-radius: none;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    gap: 20px;
+  }
+}
+
+.header__apartments-main-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    @include text-style-general-style;
+    color: $color-black;
+  }
+}
+
+.header__apartments-main-btn-svg {
+  width: 36px;
+  height: 36px;
+  background-color: #de1343;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.language__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  order: -1;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  @include laptop {
+    order: 1;
+    gap: 24px;
+  }
+}
+
+.language__item {
+  text-align: center;
+  position: relative;
+  @include text-style-uppercaesed-btn;
+  text-transform: none;
+  text-decoration: none;
+  color: $color-white;
+
+  &~&::before {
+    content: '|';
+
+    transform: rotate(90deg);
+    color: inherit;
+    opacity: 0.5;
+    position: absolute;
+    left: 13px;
+    bottom: 60%;
+    font-size: 30px;
+  }
+
+  @include tablet {
+    flex-direction: row;
+
+    &~&::before {
+      transform: rotate(0deg);
+      left: -13px;
+      bottom: 25%;
+      font-size: 18px;
+    }
+  }
+}
+
+.header__logo {
+  order: -1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: static;
+  transform: none;
+
+  @include tablet {
+    gap: 8px;
+    position: static;
+    transform: none;
+  }
+
+  @include laptop {
+    order: 0;
+    gap: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @include desktop {
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.header__logo-name {
+  display: none;
+
+  @include laptop {
+    display: block;
+    @include text-style-uppercaesed-btn;
+    text-transform: none;
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+.header__logo-name--mobile {
+  @include text-style-uppercaesed-btn;
+  text-transform: none;
+  text-decoration: none;
+  color: $color-white;
+  font-size: 14px;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+//modal Call us
+
+.call-us__modal-container {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  padding: 8px 16px;
+  background: rgba(17, 17, 17, 0.5);
+  max-height: 500px;
+  transition: all 1s ease;
+  margin-top: 15px;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+
+  // overflow: hidden;
+  @include tablet {
+    gap: 16px;
+    left: auto;
+    transform: translateX(-35%);
+  }
+
+  @include laptop {
+    display: none;
+  }
+
+  & .contacts__phone {
+    @include text-style-general-style;
+  }
+}
+
+.call-us__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  max-height: 0px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 12px;
+  right: 11px;
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.call-us__triangle-decor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 24px;
+  height: 12px;
+}
+
+.order-call {
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
+
+  .inputs-wrapper {
+    gap: 0;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .input-message {
+    font-size: 9px;
+  }
+}
+
+.order-call__title {
+  @include text-style-news-descr;
+  color: $color-black;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+
+  & span {
+    width: 64px;
+    height: 1px;
+    background-color: $color-gray-1;
+  }
+}
+
+.order-call__select {
+  @include text-style-news-descr;
+  margin-bottom: 10px;
+  border: 1px solid $color-yellow;
+  padding: 10px;
+  width: 100%;
+
+  option {
+    @include text-style-news-descr;
+    width: fit-content;
+
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.order-call__number {
+  width: 284px;
+  padding: 19px 20px;
+  border: none;
+  outline: none;
+  background-color: $color-gray-1;
+
+  &::placeholder {
+    @include text-style-news-descr;
+    color: $color-black;
+  }
+
+  &:disabled {
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+.order-call__submit-btn {
+  @include text-style-news-descr;
+  color: $color-white;
+  background-color: $color-black;
+  padding: 20px;
+  width: 100%;
+}
+
+.eng-presentation {
+  @include text-style-general-style;
+  color: $color-white;
+
+  span {
+    display: none;
+
+    @include tablet {
+      display: inline;
+    }
+  }
+}
+
+.menu-btn {
+  p {
+    display: none;
+  }
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    p {
+      display: block;
+
+      @include text-style-general-style;
+      color: $color-white;
+    }
+  }
+
+  @include desktop {
+    gap: 20px;
+  }
+}
+
+.menu-btn__burger {
+  height: 3px;
+  width: 28px;
+  background-color: $color-white;
+  position: relative;
+
+  & .line-over {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 3px;
+    top: -6px;
+    left: 0;
+    width: 54%;
+    background-color: inherit;
+  }
+
+  & .line-under {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 3px;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    background-color: inherit;
+  }
+}
+
+//menu
+
+.menu__container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu__bg {
+  perspective: 1000px;
+  width: 100vw;
+  height: inherit;
+  background-color: transparent;
+}
+
+.menu__bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+
+  transform: scale(10);
+  opacity: 0;
+  // transform: translateZ(1000px);
+
+  // &:hover {
+  //   transform: translateZ(1000px);
+
+  //   .menu__bg {
+  //     background-color: #F8F8F8;
+  //   }
+  // }
+}
+
+.header__nav-container {
+  padding-top: 80px;
+  opacity: 0;
+  overflow: auto;
+  height: 100%;
+
+  & .main-nav__link {
+    color: $color-gray-4;
+  }
+
+  & .sub-nav__title {
+    color: $color-gray-4;
+  }
+
+  & .sub-nav__link {
+    color: $color-gray-3;
+  }
+
+  & .sub-nav__title-wrap svg {
+    stroke: $color-black;
+  }
+
+  @include tablet {
+    padding-top: 120px;
+  }
+
+  @include laptop {
+    overflow-y: hidden;
+    padding-top: 106px;
+  }
+
+  @include desktop {
+    padding-top: 156px;
+  }
+
+  .main-nav__link {
+    transition: color 0.3s ease-in-out;
+  }
+
+  .main-nav__item {
+    @include from(1023px) {
+      &:hover {
+        .main-nav__link {
+          color: rgb(68, 75, 85, 0.5);
+          transition: color 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .sub-nav__link {
+    transition: color 0.3s ease-in-out;
+  }
+
+  .sub-nav__item {
+    &:hover {
+      .sub-nav__link {
+        color: rgb(68, 75, 85, 0.5);
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.type2 {
+  .header__call-btn-wrap {
+
+    .contacts__phone--booking,
+    .contacts__phone--invest {
+      color: $color-black;
+    }
+  }
+
+  & .language__item {
+    color: $color-black;
+  }
+
+  & .header__logo-name {
+    color: $color-black;
+  }
+
+  & .header__call-btn .svg--link-mobile path {
+    stroke: $color-black;
+  }
+
+  & .header__logo-name--mobile {
+    color: $color-black;
+  }
+
+  & .menu-btn p {
+    color: $color-black;
+  }
+
+  & .menu-btn__burger {
+    background-color: $color-black;
+  }
+
+  & .scroll-down {
+    & .header__call-btn {
+      .svg--link-mobile path {
+        stroke: $color-white !important;
+      }
+    }
+
+    .header__call-btn-wrap {
+
+      .contacts__phone--booking,
+      .contacts__phone--invest {
+        color: $color-white;
+      }
+    }
+
+    & .language__item {
+      color: $color-white !important;
+    }
+
+    & .header__logo-name {
+      color: $color-white !important;
+    }
+
+    & .header__logo-name--mobile {
+      color: $color-white !important;
+    }
+
+    & .menu-btn p {
+      color: $color-white !important;
+    }
+
+    & .menu-btn__burger {
+      background-color: $color-white !important;
+    }
+  }
+}
+
+// .lenis.lenis-smooth [data-lenis-prevent] {
+//   overscroll-behavior: contain;
+// }

@@ -1,0 +1,144 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'spa-swimming-pool-wn'
+    var id_page = 'id-page-spa-swimming-pool-wn'
+    var class_page = 'class-page-spa-swimming-pool-wn'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/swimmingPoolWn.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.secondory-page-hero
+
+    .secondory-page__text-wrap.container
+      h1.secondory-page__title Басейн "Вище неба"
+      p.secondory-page__description Description
+    .swiper 
+      .swiper-wrapper
+        .swiper-slide.section-test
+          .secondory-page-hero__mask
+          .block-style-column__info-wrapper.block-style-column__info-wrapper--mobile
+            input(type="range" name="aaaa")
+            include ../includes/block-style-column-mobile-image-scroller-svg.pug
+            div.block-style-column__mobile-scroller
+              img(src='./assets/images/spa-pages/swimming-pool-wn.jpg' alt='section-3-img')
+          +img("spa-pages/swimming-pool-wn.jpg").spa-sw-img-desktop
+        .swiper-slide.section-test 
+          .secondory-page-hero__mask
+          .block-style-column__info-wrapper.block-style-column__info-wrapper--mobile
+            input(type="range" name="aaaa")
+            include ../includes/block-style-column-mobile-image-scroller-svg.pug
+            div.block-style-column__mobile-scroller
+              img(src='./assets/images/spa-pages/swimming-pool-wn.jpg' alt='section-3-img')
+          +img("spa-pages/swimming-pool-wn.jpg").spa-sw-img-desktop
+
+      .swiper-buttons-container
+        .swiper-button-prev
+          +svg('spa-slider-arrow')
+        .swiper-button-next
+          +svg('spa-slider-arrow')
+        .swiper__amount
+          .swiper__current
+            span(data-first-digit)
+          .swiper__divider /
+          .swiper__all(data-total)
+  section.transition-page__container.container 
+    .transtion-page__content-wrap 
+      .transtion-page__text-wrap
+        .transition-page__label Наступна сторінка з розділу
+        .transition-page__title-wrap 
+          h2.transition-page__title Welness
+          span
+            .transition-page__title--decor &
+            h2.transition-page__title Spa
+      .swiper-container 
+        .link__arrow-decor--left
+          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="202" viewBox="0 0 65 202" fill="none">
+            <mask id="mask0_966_9845" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="67" height="202">
+              <rect x="65.0078" y="0.152222" width="201.473" height="65.0144" transform="rotate(90 65.0078 0.152222)" fill="url(#paint0_linear_966_9845)"/>
+            </mask>
+            <g mask="url(#mask0_966_9845)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M43.5825 134.569C35.1432 141.812 30.2872 152.379 30.2872 163.5L30.2872 201.157C30.2872 201.416 30.0773 201.626 29.8184 201.626C29.5595 201.626 29.3497 201.416 29.3497 201.157L29.3497 162.949C29.3497 151.667 24.4234 140.947 15.8621 133.6L14.7541 132.649C-4.70669 115.946 -4.7067 85.8295 14.7541 69.1274L15.8626 68.1761C24.4236 60.8286 29.3497 50.1093 29.3497 38.8275L29.3497 0.620999C29.3497 0.3621 29.5596 0.15222 29.8185 0.15222C30.0774 0.15222 30.2872 0.3621 30.2872 0.621L30.2872 38.2762C30.2872 49.3971 35.1431 59.9636 43.5821 67.2064L45.148 68.5503C64.9624 85.5559 64.9624 116.22 45.148 133.226L43.5825 134.569Z" fill="white"/>
+            </g>
+            <path d="M14.9961 101.231L37.8583 101.231M37.8583 101.231L37.8583 99.8638L29.285 93.03M37.8583 101.231L37.8583 102.597L29.285 108.748" stroke="#111111" stroke-width="2"/>
+            <defs>
+              <linearGradient id="paint0_linear_966_9845" x1="266.481" y1="65.1668" x2="65.0078" y2="65.1668" gradientUnits="userSpaceOnUse">
+                <stop stop-opacity="0"/>
+                <stop offset="0.165322"/>
+                <stop offset="0.491207"/>
+                <stop offset="0.815634"/>
+                <stop offset="1" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        .link__arrow-decor--right
+          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="202" viewBox="0 0 65 202" fill="none">
+            <mask id="mask0_966_9845" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="67" height="202">
+              <rect x="65.0078" y="0.152222" width="201.473" height="65.0144" transform="rotate(90 65.0078 0.152222)" fill="url(#paint0_linear_966_9845)"/>
+            </mask>
+            <g mask="url(#mask0_966_9845)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M43.5825 134.569C35.1432 141.812 30.2872 152.379 30.2872 163.5L30.2872 201.157C30.2872 201.416 30.0773 201.626 29.8184 201.626C29.5595 201.626 29.3497 201.416 29.3497 201.157L29.3497 162.949C29.3497 151.667 24.4234 140.947 15.8621 133.6L14.7541 132.649C-4.70669 115.946 -4.7067 85.8295 14.7541 69.1274L15.8626 68.1761C24.4236 60.8286 29.3497 50.1093 29.3497 38.8275L29.3497 0.620999C29.3497 0.3621 29.5596 0.15222 29.8185 0.15222C30.0774 0.15222 30.2872 0.3621 30.2872 0.621L30.2872 38.2762C30.2872 49.3971 35.1431 59.9636 43.5821 67.2064L45.148 68.5503C64.9624 85.5559 64.9624 116.22 45.148 133.226L43.5825 134.569Z" fill="white"/>
+            </g>
+            <path d="M14.9961 101.231L37.8583 101.231M37.8583 101.231L37.8583 99.8638L29.285 93.03M37.8583 101.231L37.8583 102.597L29.285 108.748" stroke="#111111" stroke-width="2"/>
+            <defs>
+              <linearGradient id="paint0_linear_966_9845" x1="266.481" y1="65.1668" x2="65.0078" y2="65.1668" gradientUnits="userSpaceOnUse">
+                <stop stop-opacity="0"/>
+                <stop offset="0.165322"/>
+                <stop offset="0.491207"/>
+                <stop offset="0.815634"/>
+                <stop offset="1" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        .swiper-next 
+          .swiper-wrapper
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/swimming-pool-laguna.jpg")(loding="lazy")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/banya-magichni-kyli.jpg")(loding="lazy")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/swimming-pool-wn.jpg")(loding="lazy")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/medutaciyna-banya.jpg")(loding="lazy")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/swimming-pool-laguna.jpg")(loding="lazy")
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
